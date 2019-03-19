@@ -13,7 +13,7 @@ class InvoiceModel extends CI_Model {
     );
 
     if ($this->db->insert('invoice_penjualan', $data)) {
-      return $this->db->select('id_invoice')->order_by('id_invoice',"desc")->limit(1)->get('invoice')->row();
+      return $this->db->select('id_invoice')->order_by('id_invoice',"desc")->limit(1)->get('invoice_penjualan')->row();
     } else {
       return false;
     }

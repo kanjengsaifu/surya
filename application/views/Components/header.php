@@ -228,6 +228,19 @@
             <li class="<?php if($active == 'tambahSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier/tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Supplier</a></li>
           </ul>
         </li>
+        <li class="treeview <?php if($active == 'daftarPengeluaran' || $active == 'tambahPengeluaran'){echo 'active';} ?>">
+          <a href="#">
+            <i class="fa fa-edit"></i>
+            <span>Pengeluaran</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="<?php if($active == 'daftarPengeluaran'){echo 'active';} ?>"><a href="<?php echo base_url('pengeluaran'); ?>"><i class="fa fa-circle-o"></i> Daftar Pengeluaran</a></li>
+            <li class="<?php if($active == 'tambahPengeluaran'){echo 'active';} ?>"><a href="<?php echo base_url('pengeluaran/tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Pengeluaran</a></li>
+          </ul>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
