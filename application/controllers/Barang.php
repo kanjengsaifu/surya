@@ -49,6 +49,7 @@ class Barang extends CI_Controller {
     $this->form_validation->set_rules('id_kategori', 'Kategori Barang', 'required');
     $this->form_validation->set_rules('id_merek', 'Merek Barang', 'required');
     $this->form_validation->set_rules('id_satuan', 'Satuan Barang', 'required');
+    $this->form_validation->set_rules('gudang', 'Nama Gudang', 'required');
     $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
     
     if ($this->form_validation->run() == TRUE) {
@@ -95,6 +96,7 @@ class Barang extends CI_Controller {
     $this->form_validation->set_rules('id_kategori', 'Kategori Barang', 'required');
     $this->form_validation->set_rules('id_merek', 'Merek Barang', 'required');
     $this->form_validation->set_rules('id_satuan', 'Satuan Barang', 'required');
+    $this->form_validation->set_rules('gudang', 'Nama Gudang', 'required');
     $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
     
     if ($this->form_validation->run() == TRUE) {

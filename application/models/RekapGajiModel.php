@@ -42,7 +42,8 @@ class RekapGajiModel extends CI_Model {
         'id_karyawan' => $id_karyawan,
         'bulan' => $bulan,
         'tahun' => $tahun,
-        'presensi' => 1
+        'presensi' => 1,
+        'kasbon' => 0
       );
       
       if ($this->db->insert('rekap_gaji', $data)) {
@@ -67,11 +68,55 @@ class RekapGajiModel extends CI_Model {
     }
   }
 
+  public function kasbon($id_karyawan)
+  {
+    $tahun = date('Y');
+    $bulan = $this->month(date('m'));
+    $data = $this->db->get_where('rekap_gaji', array(
+      'id_karyawan' => $id_karyawan,
+      'bulan' => $bulan,
+      'tahun' => $tahun
+    ));
+    // die(json_encode($data->num_rows()));
+    // Kalau datanya belum ada buat bulan ini
+    if ($data->num_rows() == 0) {
+      $data = array(
+        'id_rekap' => NULL,
+        'id_karyawan' => $id_karyawan,
+        'bulan' => $bulan,
+        'tahun' => $tahun,
+        'presensi' => 1,
+        'kasbon' => $this->input->post('kasbon')
+      );
+      
+      if ($this->db->insert('rekap_gaji', $data)) {
+        return TRUE;
+      } else {
+        return FALSE;
+      }
+    } else {
+      // Kalau datanya udah ada, jadi nambahin
+      $old = $data->row_array();
+      $data = array(
+        'id_rekap' => $old['id_rekap'],
+        'kasbon' => $old['kasbon'] + $this->input->post('kasbon')
+      );
+  
+      $this->db->where('id_rekap', $old['id_rekap']);
+      if ($this->db->update('rekap_gaji', $data)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
   public function ubah($id)
   {
     $data = array(
       'id_rekap' => $id,
-      'presensi' => $this->input->post('presensi')
+      'presensi' => $this->input->post('presensi'),
+      'kasbon' => $this->input->post('kasbon')
     );
 
     $this->db->where('id_rekap', $id);

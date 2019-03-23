@@ -26,6 +26,19 @@
                     ?>">
                   <?php echo form_error('presensi');?>
                 </div>
+                <div class="form-group <?php if (form_error('kasbon')){ echo 'has-error'; } ?>">
+                  <label>Kasbon</label>
+                  <input class="form-control" type="number" name="kasbon" id="kasbon"
+                    value="<?php
+                      if (isset($_POST['kasbon']))
+                      {
+                        echo $_POST['kasbon'];
+                      } else {
+                        echo $salary['kasbon'];
+                      }
+                    ?>">
+                  <?php echo form_error('kasbon');?>
+                </div>
                 <div class="box-footer">
                   <button class="btn btn-primary" type="submit">Submit</button>
                 </div>

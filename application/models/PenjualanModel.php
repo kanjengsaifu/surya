@@ -84,6 +84,19 @@ class PenjualanModel extends CI_Model {
     }
   }
 
+  public function laporanHarian()
+  {
+    $this->db->select('invoice_penjualan.*, customer.nama_customer, penjualan.*, barang.nama_barang, barang.harga_beli');
+    $this->db->from('invoice_penjualan');
+    $this->db->join('penjualan', 'invoice_penjualan.id_invoice = penjualan.id_invoice', 'left');
+    $this->db->join('customer', 'invoice_penjualan.id_customer = customer.id_customer', 'left');
+    $this->db->join('barang', 'penjualan.id_barang = barang.id_barang', 'left');
+    $this->db->where('invoice_penjualan.tanggal', $this->input->post('tanggal'));
+    
+    $results = $this->db->get();
+    return $results->result_array();
+  }
+
 }
 
 /* End of file PenjualanModel.php */

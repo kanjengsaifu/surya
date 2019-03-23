@@ -99,5 +99,62 @@ class Pengeluaran extends CI_Controller {
     $this->load->view('Pengeluaran/laporanHarian', $data);
   }
 
+  public function laporanBulanan($bulan)
+  {
+    $data['bulan'] = $bulan;
+    $from = $this->getFirstDay($bulan);
+    $till = $this->getLastDay($bulan);
+    $data['expenses'] = $this->PengeluaranModel->laporanBulanan($from, $till);
+    $this->load->view('Pengeluaran/laporanBulanan', $data);
+  }
+
+  public function getFirstDay($bulan)
+  {
+    $month = $this->bulan($bulan);
+    $year = date('Y');
+    $tanggal = '01-' . $month . '-' . $year;
+    return date('Y-m-d', strtotime($tanggal));
+  }
+
+  public function getLastDay($bulan)
+  {
+    $month = $this->bulan($bulan);
+    $year = date('Y');
+    $tanggal = '01-' . $month . '-' . $year;
+    return date('Y-m-t', strtotime($tanggal));
+  }
+
+  public function bulan($bulan)
+  {
+    switch($bulan) {
+      case 'januari':
+        return '01';
+      case 'februari':
+        return '02';
+      case 'maret':
+        return '03';
+      case 'april':
+        return '04';
+      case 'mei':
+        return '05';
+      case 'juni':
+        return '06';
+      case 'juli':
+        return '07';
+      case 'agustus':
+        return '08';
+      case 'september':
+        return '09';
+      case 'oktober':
+        return '10';
+      case 'november':
+        return '11';
+      case 'desember':
+        return '12';
+      default:
+        return false;
+    }
+  }
+
 }
 /* End Pengeluaran file Controllername.php */

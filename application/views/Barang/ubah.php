@@ -74,6 +74,19 @@
                   ?>">
                 <?php echo form_error('keterangan');?>
               </div>
+              <div class="form-group <?php if (form_error('gudang')){ echo 'has-error'; } ?>">
+                <label>Nama Gudang</label>
+                <input class="form-control" type="text" name="gudang" id="gudang"
+                  value="<?php
+                    if (isset($_POST['gudang']))
+                    {
+                      echo $_POST['gudang'];
+                    } else {
+                      echo $item['gudang'];
+                    }
+                  ?>">
+                <?php echo form_error('keterangan');?>
+              </div>
               <div class="form-group <?php if (form_error('id_kategori')){ echo 'has-error'; } ?>">
                 <label>Kategori Barang</label>
                   <select name="id_kategori" id="id_kategori" class="form-control">

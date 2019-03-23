@@ -32,7 +32,8 @@ class BarangModel extends CI_Model {
       'keterangan' => $this->input->post('keterangan'),
       'id_kategori' => $this->input->post('id_kategori'),
       'id_merek' => $this->input->post('id_merek'),
-      'id_satuan' => $this->input->post('id_satuan')
+      'id_satuan' => $this->input->post('id_satuan'),
+      'gudang' => $this->input->post('gudang')
     );
     
     if ($this->db->insert('barang', $data)) {
@@ -122,7 +123,8 @@ class BarangModel extends CI_Model {
         'keterangan' => $this->input->post('keterangan'),
         'id_kategori' => $this->input->post('id_kategori'),
         'id_merek' => $this->input->post('id_merek'),
-        'id_satuan' => $this->input->post('id_satuan')
+        'id_satuan' => $this->input->post('id_satuan'),
+        'gudang' => $this->input->post('gudang')
       );
       
       $this->db->where('id_barang', $id);

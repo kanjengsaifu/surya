@@ -154,6 +154,13 @@ class Penjualan extends CI_Controller {
     }
   }
 
+  public function laporanHarian()
+  {
+    $data['salaries'] = $this->PenjualanModel->laporanHarian($this->input->post('tanggal'));
+    $data['tanggal'] = $this->input->post('tanggal');
+    $this->load->view('Penjualan/laporanHarian', $data);
+  }
+
 }
 
 /* End of file Penjualan.php */

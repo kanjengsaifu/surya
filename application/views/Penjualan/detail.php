@@ -15,15 +15,14 @@
     </div>
 
     <div class="row invoice-info">
-      <div class="col-sm-12 invoice-col">
-        Pelanggan:<strong class="pull-right">Invoice #<?php echo $invoice['id_invoice']; ?></strong>
+      <div class="col-sm-12">
+        Pelanggan<strong class="pull-right">Invoice #<?php echo $invoice['id_invoice']; ?></strong>
         <address>
-          <strong><?php echo $invoice['nama_customer']; ?></strong><br>
-          <?php echo $invoice['alamat_customer']; ?><br>
-          <?php echo $invoice['telp_customer']; ?><br>
+          Nama&emsp;&emsp;&emsp;&nbsp;&nbsp;: <strong><?php echo $invoice['nama_customer']; ?></strong><br>
+          Alamat&emsp;&emsp;&emsp;: <?php echo $invoice['alamat_customer']; ?><br>
+          No Telepon &emsp;: <?php echo $invoice['telp_customer']; ?><br>
         </address>
       </div>
-      <div class="col-xs-3 invoice-col"></div>
     </div>
 
     <div class="row">

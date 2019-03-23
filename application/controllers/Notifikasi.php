@@ -13,6 +13,7 @@ class Notifikasi extends CI_Controller {
     global $data;
     $data['notif'] = $this->NotifikasiModel->get();
     $data['unread'] = $this->NotifikasiModel->unread();
+    $data['active'] = 'notifikasi';
   }
 
   public function index()

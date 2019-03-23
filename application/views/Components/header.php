@@ -36,8 +36,7 @@
   <!-- #Header -->
   <header class="main-header">
     <!-- Logo -->
-    <?php //TODO: dibenerin hrefnya ?>
-    <a href="index2.html" class="logo">
+    <a href="<?php echo base_url('dashboard'); ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>S</b>RY</span>
       <!-- logo for regular state and mobile devices -->
@@ -125,7 +124,6 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <?php //TODO: handle class activenya ?>
             <li class="<?php if($active == 'daftarPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan'); ?>"><i class="fa fa-circle-o"></i> Daftar</a></li>
             <li class="<?php if($active == 'tambahPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan/jual'); ?>"><i class="fa fa-circle-o"></i> Tambah</a></li>
           </ul>
@@ -202,7 +200,7 @@
             <li class="<?php if($active == 'tambahPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan/tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggan</a></li>
           </ul>
         </li>
-        <li class="treeview <?php if($active == 'daftarKaryawan' || $active == 'tambahKaryawan'){echo 'active';} ?>">
+        <li class="treeview <?php if($active == 'daftarKaryawan' || $active == 'tambahKaryawan' || $active == 'daftarGaji'){echo 'active';} ?>">
           <a href="#">
             <i class="fa fa-edit"></i>
             <span>Karyawan</span>
@@ -213,6 +211,7 @@
           <ul class="treeview-menu">
             <li class="<?php if($active == 'daftarKaryawan'){echo 'active';} ?>"><a href="<?php echo base_url('karyawan'); ?>"><i class="fa fa-circle-o"></i> Daftar Karyawan</a></li>
             <li class="<?php if($active == 'tambahKaryawan'){echo 'active';} ?>"><a href="<?php echo base_url('karyawan/tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Karyawan</a></li>
+            <li class="<?php if($active == 'daftarGaji'){echo 'active';} ?>"><a href="<?php echo base_url('rekapgaji'); ?>"><i class="fa fa-circle-o"></i> Gaji Karyawan</a></li>
           </ul>
         </li>
         <li class="treeview <?php if($active == 'daftarSupplier' || $active == 'tambahSupplier'){echo 'active';} ?>">

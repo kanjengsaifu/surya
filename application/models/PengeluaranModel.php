@@ -66,6 +66,13 @@ class PengeluaranModel extends CI_Model {
     return $results->result_array();
   }
 
+  public function laporanBulanan($from, $till)
+  {
+    $this->db->where('tanggal >=', $from);
+    $this->db->where('tanggal <=', $till);
+    return $this->db->get('pengeluaran')->result_array();
+  }
+
 }
 
 /* End of file PengeluaranModel.php */

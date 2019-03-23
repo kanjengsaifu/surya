@@ -21,13 +21,16 @@ class RekapGaji extends CI_Controller {
     global $data;
     if ($bulan) {
       $data['bulan'] = $bulan;
+      // $data['currentMonth'] = false;
       $data['title'] = 'Monthly Salaries Bulan '.$bulan;
       $data['active'] = 'daftarGaji';
       $data['salaries'] = $this->RekapGajiModel->get($bulan);
     } else {
-      $data['salaries'] = $this->RekapGajiModel->get($this->month(date('m')));
+      $data['bulan'] = $this->month(date('m'));
+      // $data['currentMonth'] = true;
       $data['title'] = 'Monthly Salaries';
       $data['active'] = 'daftarGaji';
+      $data['salaries'] = $this->RekapGajiModel->get($this->month(date('m')));
     }
     $data['employees'] = $this->KaryawanModel->get();
     $this->load->view('Components/header', $data);
@@ -45,6 +48,16 @@ class RekapGaji extends CI_Controller {
     }
   }
 
+  public function kasbon($id_karyawan)
+  {
+    if ($this->RekapGajiModel->kasbon($id_karyawan)) {
+      $this->session->set_flashdata('success', 'Berhasil menambah data kasbon karyawan');
+      redirect('rekapgaji','refresh');
+    } else {
+      $this->session->set_flashdata('failed', 'Gagal menambah data kasbon karyawan');
+    }
+  }
+
   public function ubah($id_rekap)
   {
     global $data;
@@ -52,6 +65,7 @@ class RekapGaji extends CI_Controller {
     $data['active'] = 'daftarGaji';
     $data['salary'] = $this->RekapGajiModel->get(FALSE, $id_rekap);
     $this->form_validation->set_rules('presensi', 'Presensi', 'required');
+    $this->form_validation->set_rules('kasbon', 'Kasbon', 'required');
     $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
 
     if ($this->form_validation->run() == TRUE) {
@@ -65,8 +79,15 @@ class RekapGaji extends CI_Controller {
       $this->load->view('Components/header', $data);
       $this->load->view('RekapGaji/ubah', $data);
       $this->load->view('Components/footer');
-    }
-        
+    }     
+  }
+
+  public function laporan($bulan)
+  {
+    $data['salaries'] = $this->RekapGajiModel->get($bulan, false);
+    $data['bulan'] = ucfirst($bulan);
+    // die(json_encode($data['salaries']));
+    $this->load->view('RekapGaji/laporanBulanan', $data);
   }
 
   private function month($angka) {

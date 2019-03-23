@@ -21,6 +21,7 @@
                     <th>Kategori</th>
                     <th>Merek</th>
                     <th>Satuan</th>
+                    <th>Gudang</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
                   </tr>
@@ -35,6 +36,7 @@
                     <td><?php echo $itm['nama_kategori']; ?></td>
                     <td><?php echo $itm['nama_merek']; ?></td>
                     <td><?php echo $itm['nama_satuan']; ?></td>
+                    <td><?php echo $itm['gudang']; ?></td>
                     <td><?php echo $itm['keterangan']; ?></td>
                     <td>
                       <a href="<?php echo base_url('barang/hapus_barang/'.$itm['id_barang']); ?>">Delete</a>
