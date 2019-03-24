@@ -91,7 +91,8 @@
                   <?php endforeach; ?>
                 </select>
                 <div class="form-group <?php if (form_error('jumlah')){ echo 'has-error'; } ?>">
-                  <label>Jumlah Dibeli</label>
+                  <label>Jumlah Dibeli</label><br>
+                  <small>Jumlah stok barang: <strong id="tulisanStok"></strong></small>
                   <input type="number" name="jumlah" id="jumlah" min="0" onkeyup="jumlahUbah();" onchange="jumlahUbah();" max="0" class="form-control"
                     value="<?php
                     if (isset($_POST['jumlah']))
@@ -100,6 +101,7 @@
                     }
                   ?>">
                   <?php echo form_error('jumlah');?>
+                  <small>Jumlah akan direset apabila melebihi stok</small>
                 </div>
                 <div class="form-group">
                   <label>Total Harga</label>
@@ -119,7 +121,9 @@
               </div>
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Tambah Barang</button>
-                <a class="btn btn-success" href="<?php echo base_url('penjualan/detail/'.$id_invoice); ?>">Selesai</a>
+                <a class="btn btn-success pull-right" href="<?php echo base_url('penjualan/detail/'.$id_invoice); ?>" id="buttonSelesai">Selesai</a>
+                <span class="pull-right">&nbsp;</span>
+                <a class="btn btn-danger pull-right" href="<?php echo base_url('penjualan/hapus/'.$id_invoice); ?>">Batal</a>
               </div>
             <?php echo form_close(); ?>
           </div>
@@ -134,6 +138,15 @@
     var harga = document.getElementById('harga_barang')
     var stok = document.getElementById('stok')
     var barang = document.getElementById('id_barang')
+    var tulisanStok = document.getElementById('tulisanStok')
+    var buttonSelesai = document.getElementById('buttonSelesai')
+    var array = <?php echo json_encode($sales); ?>
+
+
+    if (!array.length) {
+      buttonSelesai.removeAttribute('href')
+      buttonSelesai.setAttribute('disabled', 'disabled')
+    }
 
     total.value = parseInt(jumlah.value) * parseInt(harga.options[harga.selectedIndex].text)
     jumlah.max = parseInt(stok.options[stok.selectedIndex].text)
@@ -141,6 +154,7 @@
     function ubahBarang() {
       harga.value = barang.value
       stok.value = barang.value
+      tulisanStok.innerHTML = stok.options[stok.selectedIndex].text
       jumlah.max = parseInt(stok.options[stok.selectedIndex].text)
       jumlah.value = ''
       total.value = ''

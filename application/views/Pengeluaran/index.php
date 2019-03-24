@@ -57,7 +57,7 @@
                   <td><?php echo $emp['nama_pengeluaran']; ?></td>
                   <td><?php echo $emp['total']; ?></td>
                   <td>
-                    <a href="<?php echo base_url('pengeluaran/hapus/'.$emp['id_pengeluaran']); ?>">Delete</a>
+                    <a class="text-danger" href="<?php echo base_url('pengeluaran/hapus/'.$emp['id_pengeluaran']); ?>">Delete</a>
                     <a href="<?php echo base_url('pengeluaran/ubah/'.$emp['id_pengeluaran']); ?>">Edit</a>
                   </td>
                 </tr>

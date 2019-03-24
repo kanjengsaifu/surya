@@ -23,7 +23,7 @@
                   <tr>
                     <td><?php echo $uni['nama_satuan']; ?></td>
                     <td>
-                      <a href="<?php echo base_url('barang/hapus_satuan/'.$uni['id_satuan']); ?>">Delete</a>
+                      <a class="text-danger" href="<?php echo base_url('barang/hapus_satuan/'.$uni['id_satuan']); ?>">Delete</a>
                       <a href="<?php echo base_url('barang/ubah_satuan/'.$uni['id_satuan']); ?>">Edit</a>
                     </td>
                   </tr>

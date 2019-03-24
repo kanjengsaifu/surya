@@ -23,7 +23,7 @@
                 <tr>
                   <td><?php echo $cat['nama_kategori']; ?></td>
                   <td>
-                    <a href="<?php echo base_url('barang/hapus_kategori/'.$cat['id_kategori']); ?>">Delete</a>
+                    <a class="text-danger" href="<?php echo base_url('barang/hapus_kategori/'.$cat['id_kategori']); ?>">Delete</a>
                     <a href="<?php echo base_url('barang/ubah_kategori/'.$cat['id_kategori']); ?>">Edit</a>
                   </td>
                 </tr>

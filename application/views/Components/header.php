@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/fonts/font-awesome.min.css');?>">
   <!-- Ionicons -->
   <!-- <link rel="stylesheet" href="<?php echo base_url('assets/icons/ionicons.min.css');?>"> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.8/collection/icon/icon.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.8/collection/icon/icon.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/AdminLTE.min.css');?>">
   <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
@@ -56,7 +57,7 @@
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
+              <i class="fa fa-bell"></i>
               <?php if(count($unread) > 0): ?>
                 <span class="label label-warning"><?php echo count($unread); ?></span>
               <?php endif; ?>
@@ -119,127 +120,127 @@
         <li class="header">NAVIGATION</li>
         <li class="treeview <?php if($active == 'daftarPenjualan' || $active == 'tambahPenjualan'){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-dashboard"></i>
+            <i class="fa fa-chart-line"></i>
             <span>Penjualan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan'); ?>"><i class="fa fa-circle-o"></i> Daftar</a></li>
-            <li class="<?php if($active == 'tambahPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan/jual'); ?>"><i class="fa fa-circle-o"></i> Tambah</a></li>
+            <li class="<?php if($active == 'daftarPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar</a></li>
+            <li class="<?php if($active == 'tambahPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan/jual'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah</a></li>
           </ul>
         </li>
         <li class="treeview <?php if($active == 'daftarPembelian' || $active == 'tambahPembelian'){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-files-o"></i>
+            <i class="fa fa-shopping-cart"></i>
             <span>Pembelian</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian'); ?>"><i class="fa fa-circle-o"></i> Daftar</a></li>
-            <li class="<?php if($active == 'tambahPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian/beli'); ?>"><i class="fa fa-circle-o"></i> Tambah</a></li>
+            <li class="<?php if($active == 'daftarPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar</a></li>
+            <li class="<?php if($active == 'tambahPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian/beli'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah</a></li>
           </ul>
         </li>
         <li class="treeview <?php if($active == 'daftarBarang' || $active == 'tambahBarang' || $active == 'daftarKategori' || $active == 'tambahKategori' || $active == 'daftarMerek' || $active == 'tambahMerek' || $active == 'daftarSatuan' || $active == 'tambahSatuan' ){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
+            <i class="fa fa-box-open"></i>
             <span>Barang</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarBarang'){echo 'active';} ?>"><a href="<?php echo base_url('barang/list_barang'); ?>"><i class="fa fa-circle-o"></i> Daftar Barang</a></li>
-            <li class="<?php if($active == 'tambahBarang'){echo 'active';} ?>"><a href="<?php echo base_url('barang/tambah_barang'); ?>"><i class="fa fa-circle-o"></i> Tambah Barang</a></li>
+            <li class="<?php if($active == 'daftarBarang'){echo 'active';} ?>"><a href="<?php echo base_url('barang/list_barang'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Barang</a></li>
+            <li class="<?php if($active == 'tambahBarang'){echo 'active';} ?>"><a href="<?php echo base_url('barang/tambah_barang'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Barang</a></li>
             <li class="treeview <?php if($active == 'daftarKategori' || $active == 'tambahKategori'){echo 'active';} ?>">
-              <a href="#"><i class="fa fa-circle-o"></i> Kategori
+              <a href="#"><i class="far fa-circle"></i>&nbsp;&nbsp;Kategori
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li class="<?php if($active == 'daftarKategori'){echo 'active';} ?>"><a href="<?php echo base_url('barang/list_kategori'); ?>"><i class="fa fa-circle-o"></i> Daftar Kategori</a></li>
-                <li class="<?php if($active == 'tambahKategori'){echo 'active';} ?>"><a href="<?php echo base_url('barang/tambah_kategori'); ?>"><i class="fa fa-circle-o"></i> Tambah Kategori</a></li>
+                <li class="<?php if($active == 'daftarKategori'){echo 'active';} ?>"><a href="<?php echo base_url('barang/list_kategori'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Kategori</a></li>
+                <li class="<?php if($active == 'tambahKategori'){echo 'active';} ?>"><a href="<?php echo base_url('barang/tambah_kategori'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Kategori</a></li>
               </ul>
             </li>
             <li class="treeview <?php if($active == 'daftarMerek' || $active == 'tambahMerek'){echo 'active';} ?>">
-              <a href="#"><i class="fa fa-circle-o"></i> Merek
+              <a href="#"><i class="far fa-circle"></i>&nbsp;&nbsp;Merek
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li class="<?php if($active == 'daftarMerek'){echo 'active';} ?>"><a href="<?php echo base_url('barang/list_merek'); ?>"><i class="fa fa-circle-o"></i> Daftar Merek</a></li>
-                <li class="<?php if($active == 'tambahMerek'){echo 'active';} ?>"><a href="<?php echo base_url('barang/tambah_merek'); ?>"><i class="fa fa-circle-o"></i> Tambah Merek</a></li>
+                <li class="<?php if($active == 'daftarMerek'){echo 'active';} ?>"><a href="<?php echo base_url('barang/list_merek'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Merek</a></li>
+                <li class="<?php if($active == 'tambahMerek'){echo 'active';} ?>"><a href="<?php echo base_url('barang/tambah_merek'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Merek</a></li>
               </ul>
             </li>
             <li class="treeview <?php if($active == 'daftarSatuan' || $active == 'tambahSatuan'){echo 'active';} ?>">
-              <a href="#"><i class="fa fa-circle-o"></i> Satuan
+              <a href="#"><i class="far fa-circle"></i>&nbsp;&nbsp;Satuan
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li class=<?php if($active == 'daftarSatuan'){echo 'active';} ?>><a href="<?php echo base_url('barang/list_satuan'); ?>"><i class="fa fa-circle-o"></i> Daftar Satuan</a></li>
-                <li class="<?php if($active == 'tambahSatuan'){echo 'active';} ?>"><a href="<?php echo base_url('barang/tambah_satuan'); ?>"><i class="fa fa-circle-o"></i> Tambah Satuan</a></li>
+                <li class=<?php if($active == 'daftarSatuan'){echo 'active';} ?>><a href="<?php echo base_url('barang/list_satuan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Satuan</a></li>
+                <li class="<?php if($active == 'tambahSatuan'){echo 'active';} ?>"><a href="<?php echo base_url('barang/tambah_satuan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Satuan</a></li>
               </ul>
             </li>
           </ul>
         </li>
         <li class="treeview <?php if($active == 'daftarPelanggan' || $active == 'tambahPelanggan'){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-laptop"></i>
+            <i class="fa fa-address-book"></i>
             <span>Pelanggan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan'); ?>"><i class="fa fa-circle-o"></i> Daftar Pelanggan</a></li>
-            <li class="<?php if($active == 'tambahPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan/tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Pelanggan</a></li>
+            <li class="<?php if($active == 'daftarPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Pelanggan</a></li>
+            <li class="<?php if($active == 'tambahPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Pelanggan</a></li>
           </ul>
         </li>
         <li class="treeview <?php if($active == 'daftarKaryawan' || $active == 'tambahKaryawan' || $active == 'daftarGaji'){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-edit"></i>
+            <i class="fa fa-user-friends"></i>
             <span>Karyawan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarKaryawan'){echo 'active';} ?>"><a href="<?php echo base_url('karyawan'); ?>"><i class="fa fa-circle-o"></i> Daftar Karyawan</a></li>
-            <li class="<?php if($active == 'tambahKaryawan'){echo 'active';} ?>"><a href="<?php echo base_url('karyawan/tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Karyawan</a></li>
-            <li class="<?php if($active == 'daftarGaji'){echo 'active';} ?>"><a href="<?php echo base_url('rekapgaji'); ?>"><i class="fa fa-circle-o"></i> Gaji Karyawan</a></li>
+            <li class="<?php if($active == 'daftarKaryawan'){echo 'active';} ?>"><a href="<?php echo base_url('karyawan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Karyawan</a></li>
+            <li class="<?php if($active == 'tambahKaryawan'){echo 'active';} ?>"><a href="<?php echo base_url('karyawan/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Karyawan</a></li>
+            <li class="<?php if($active == 'daftarGaji'){echo 'active';} ?>"><a href="<?php echo base_url('rekapgaji'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Gaji Karyawan</a></li>
           </ul>
         </li>
         <li class="treeview <?php if($active == 'daftarSupplier' || $active == 'tambahSupplier'){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-edit"></i>
+            <i class="fa fa-dolly-flatbed"></i>
             <span>Supplier</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier'); ?>"><i class="fa fa-circle-o"></i> Daftar Supplier</a></li>
-            <li class="<?php if($active == 'tambahSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier/tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Supplier</a></li>
+            <li class="<?php if($active == 'daftarSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Supplier</a></li>
+            <li class="<?php if($active == 'tambahSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Supplier</a></li>
           </ul>
         </li>
         <li class="treeview <?php if($active == 'daftarPengeluaran' || $active == 'tambahPengeluaran'){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-edit"></i>
+            <i class="fa fa-search-dollar"></i>
             <span>Pengeluaran</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarPengeluaran'){echo 'active';} ?>"><a href="<?php echo base_url('pengeluaran'); ?>"><i class="fa fa-circle-o"></i> Daftar Pengeluaran</a></li>
-            <li class="<?php if($active == 'tambahPengeluaran'){echo 'active';} ?>"><a href="<?php echo base_url('pengeluaran/tambah'); ?>"><i class="fa fa-circle-o"></i> Tambah Pengeluaran</a></li>
+            <li class="<?php if($active == 'daftarPengeluaran'){echo 'active';} ?>"><a href="<?php echo base_url('pengeluaran'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Pengeluaran</a></li>
+            <li class="<?php if($active == 'tambahPengeluaran'){echo 'active';} ?>"><a href="<?php echo base_url('pengeluaran/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Pengeluaran</a></li>
           </ul>
         </li>
       </ul>

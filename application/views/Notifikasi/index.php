@@ -30,7 +30,7 @@
                         echo '<span class="label label-success">Terbaca</span>';
                       }?></td>
                     <td>
-                      <a href="<?php echo base_url('notifikasi/hapus/'.$brd['id_notifikasi']); ?>">Delete</a>
+                      <a class="text-danger" href="<?php echo base_url('notifikasi/hapus/'.$brd['id_notifikasi']); ?>">Delete</a>
                       <a href="<?php echo base_url('notifikasi/read/'.$brd['id_notifikasi']); ?>">Terbaca</a>
                     </td>
                   </tr>

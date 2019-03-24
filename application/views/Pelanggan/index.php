@@ -29,7 +29,7 @@
                     <td><?php echo $cus['telp_customer']; ?></td>
                     <td><?php echo $cus['keterangan']; ?></td>
                     <td>
-                      <a href="<?php echo base_url('pelanggan/hapus/'.$cus['id_customer']); ?>">Delete</a>
+                      <a class="text-danger" href="<?php echo base_url('pelanggan/hapus/'.$cus['id_customer']); ?>">Delete</a>
                       <a href="<?php echo base_url('pelanggan/ubah/'.$cus['id_customer']); ?>">Edit</a>
                     </td>
                   </tr>

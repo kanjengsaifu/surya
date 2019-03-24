@@ -106,7 +106,9 @@
               </div>
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Tambah Barang</button>
-                <a class="btn btn-success" href="<?php echo base_url('pembelian/detail/'.$id_invoice); ?>">Selesai</a>
+                <a class="btn btn-success pull-right" href="<?php echo base_url('pembelian/detail/'.$id_invoice); ?>" id="buttonSelesai">Selesai</a>
+                <span class="pull-right">&nbsp;</span>
+                <a class="btn btn-danger pull-right" href="<?php echo base_url('pembelian/hapus/'.$id_invoice); ?>">Batal</a>
               </div>
             <?php echo form_close(); ?>
           </div>
@@ -120,6 +122,13 @@
     var jumlah = document.getElementById('jumlah')
     var harga = document.getElementById('harga_barang')
     var barang = document.getElementById('id_barang')
+    var buttonSelesai = document.getElementById('buttonSelesai')
+    var array = <?php echo json_encode($purchases);?>
+
+    if (!array.length) {
+      buttonSelesai.removeAttribute('href')
+      buttonSelesai.setAttribute('disabled', 'disabled')
+    }
 
     total.value = parseInt(harga.options[harga.selectedIndex].text) * parseInt(jumlah.value)
 

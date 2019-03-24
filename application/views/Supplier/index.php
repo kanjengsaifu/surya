@@ -35,7 +35,7 @@
                     <td><?php echo $sup['fax_supplier']; ?></td>
                     <td><?php echo $sup['keterangan']; ?></td>
                     <td>
-                      <a href="<?php echo base_url('supplier/hapus/'.$sup['id_supplier']); ?>">Delete</a>
+                      <a class="text-danger" href="<?php echo base_url('supplier/hapus/'.$sup['id_supplier']); ?>">Delete</a>
                       <a href="<?php echo base_url('supplier/ubah/'.$sup['id_supplier']); ?>">Edit</a>
                     </td>
                   </tr>

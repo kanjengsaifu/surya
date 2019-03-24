@@ -46,7 +46,7 @@
                     <td><?php echo $emp['nama_karyawan']; ?></td>
                     <td><?php echo $emp['gaji_pokok']; ?></td>
                     <td>
-                      <a href="<?php echo base_url('rekapgaji/hadir/'.$emp['id_karyawan']); ?>">Hadir</a>
+                      <a class="btn btn-primary" href="<?php echo base_url('rekapgaji/hadir/'.$emp['id_karyawan']); ?>">Hadir</a>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kasbonModalAtas<?php echo $emp['id_karyawan']; ?>">Kasbon</button>
                       <!-- Trigger modal -->
                       <div class="modal fade" id="kasbonModalAtas<?php echo $emp['id_karyawan']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle<?php echo $emp['id_karyawan']; ?>" aria-hidden="true">
@@ -106,8 +106,8 @@
                     <td><?php echo $emp['presensi']; ?></td>
                     <td><?php echo $emp['kasbon']; ?></td>
                     <td>
-                      <a href="<?php echo base_url('rekapgaji/hadir/'.$emp['id_karyawan']); ?>">Hadir</a>
-                      <a href="<?php echo base_url('rekapgaji/ubah/'.$emp['id_rekap']); ?>">Ubah</a>
+                      <a class="btn btn-primary"  href="<?php echo base_url('rekapgaji/hadir/'.$emp['id_karyawan']); ?>">Hadir</a>
+                      <a class="btn btn-warning"  href="<?php echo base_url('rekapgaji/ubah/'.$emp['id_rekap']); ?>">Ubah</a>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kasbonModalBawah<?php echo $emp['id_karyawan']; ?>">Kasbon</button>
                       <!-- Trigger modal -->
                       <div class="modal fade" id="kasbonModalBawah<?php echo $emp['id_karyawan']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle<?php echo $emp['id_karyawan']; ?>" aria-hidden="true">

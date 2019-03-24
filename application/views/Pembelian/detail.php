@@ -80,6 +80,8 @@
         <div class="col-xs-12">
           <button onClick="window.print();" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
           <a class="btn btn-primary pull-right" href="<?php echo base_url('pembelian'); ?>">Kembali</a>
+          <span class="pull-right">&nbsp;</span>
+          <a class="btn btn-danger pull-right" href="<?php echo base_url('pembelian/hapus/'.$invoice['id_invoice']); ?>">Hapus</a>
         </div>
       </div>
   </section>

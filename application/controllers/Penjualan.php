@@ -161,6 +161,22 @@ class Penjualan extends CI_Controller {
     $this->load->view('Penjualan/laporanHarian', $data);
   }
 
+  public function cetakInvoice($id_invoice)
+  {
+    global $data;
+    $data['sales'] = $this->PenjualanModel->get(FALSE, $id_invoice);
+    $data['invoice'] = $this->InvoiceModel->get($id_invoice);
+    $this->load->view('Penjualan/invoice', $data);
+  }
+
+  public function suratJalan($id_invoice)
+  {
+    global $data;
+    $data['sales'] = $this->PenjualanModel->get(FALSE, $id_invoice);
+    $data['invoice'] = $this->InvoiceModel->get($id_invoice);
+    $this->load->view('Penjualan/suratJalan', $data);
+  }
+
 }
 
 /* End of file Penjualan.php */

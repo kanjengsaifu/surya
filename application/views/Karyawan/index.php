@@ -31,7 +31,7 @@
                     <td><?php echo $emp['alamat_karyawan']; ?></td>
                     <td><?php echo $emp['gaji_pokok']; ?></td>
                     <td>
-                      <a href="<?php echo base_url('karyawan/hapus/'.$emp['id_karyawan']); ?>">Delete</a>
+                      <a class="text-danger" href="<?php echo base_url('karyawan/hapus/'.$emp['id_karyawan']); ?>">Delete</a>
                       <a href="<?php echo base_url('karyawan/ubah/'.$emp['id_karyawan']); ?>">Edit</a>
                     </td>
                   </tr>

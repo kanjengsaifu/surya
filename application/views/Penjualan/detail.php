@@ -76,8 +76,11 @@
 
     <div class="row no-print">
         <div class="col-xs-12">
-          <button onClick="window.print();" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+          <a target="_blank" href="<?php echo base_url('penjualan/cetakinvoice/'.$invoice['id_invoice']); ?>" class="btn btn-default"><i class="fa fa-print"></i> Invoice</a>
+          <a target="_blank" href="<?php echo base_url('penjualan/suratjalan/'.$invoice['id_invoice']); ?>" class="btn btn-default"><i class="fa fa-print"></i> Surat Jalan</a>
           <a class="btn btn-primary pull-right" href="<?php echo base_url('penjualan'); ?>">Kembali</a>
+          <span class="pull-right">&nbsp;</span>
+          <a class="btn btn-danger pull-right" href="<?php echo base_url('penjualan/hapus/'.$invoice['id_invoice']); ?>">Hapus</a>
         </div>
       </div>
   </section>

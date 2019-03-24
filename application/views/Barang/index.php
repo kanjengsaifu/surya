@@ -39,7 +39,7 @@
                     <td><?php echo $itm['gudang']; ?></td>
                     <td><?php echo $itm['keterangan']; ?></td>
                     <td>
-                      <a href="<?php echo base_url('barang/hapus_barang/'.$itm['id_barang']); ?>">Delete</a>
+                      <a class="text-danger" href="<?php echo base_url('barang/hapus_barang/'.$itm['id_barang']); ?>">Delete</a>
                       <a href="<?php echo base_url('barang/ubah_barang/'.$itm['id_barang']); ?>">Edit</a>
                     </td>
                   </tr>
