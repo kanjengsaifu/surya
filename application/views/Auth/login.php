@@ -28,6 +28,36 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition login-page">
+<?php //flash message ?>
+  <?php //success ?>
+  <?php if($this->session->flashdata('success')) : ?>
+    <?php echo
+      '<div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="modalSuccessLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" style="background-color:#d4edda">
+            <div class="modal-body">
+              <p class="text-success text-center" style = "margin-top:16px">'.$this->session->flashdata("success").'</p>
+            </div>
+          </div>
+        </div>
+      </div>'
+    ?>
+  <?php endif; ?>
+
+  <?php //failed ?>
+  <?php if($this->session->flashdata('failed')) : ?>
+    <?php echo
+      '<div class="modal fade" id="failed" tabindex="-1" role="dialog" aria-labelledby="modalFailedLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" style="background-color:#f8d7da">
+            <div class="modal-body">
+              <p class="text-danger text-center" style = "margin-top:16px">'.$this->session->flashdata("failed").'</p>
+            </div>
+          </div>
+        </div>
+      </div>'
+    ?>
+  <?php endif; ?>
 <div class="login-box">
   <div class="login-logo">
     <a href="../../index2.html"><b>S</b>urya</a>
@@ -81,4 +111,15 @@
 <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
 <!-- iCheck -->
 </body>
+<script>
+  // Show the failed modal
+  $(window).on('load',function(){
+    $('#failed').modal('show');
+  });
+
+  // Show the success modal
+  $(window).on('load',function(){
+    $('#success').modal('show');
+  });
+</script>
 </html>

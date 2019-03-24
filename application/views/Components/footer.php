@@ -24,16 +24,15 @@
 <!-- AdminLTE App -->
 <script src="<?php echo base_url('assets/js/adminlte.min.js');?>"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url('assets/js/dashboard.min.js');?>"></script>
+<!-- <script src="<?php // echo base_url('assets/js/dashboard.min.js');?>"></script> -->
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<script src="<?php echo base_url('assets/js/dataTables.bootstrap.min.js'); ?>"></script>
+<!-- <script src="dist/js/demo.js"></script> -->
+<!-- <script src="<?php echo base_url('assets/js/dataTables.bootstrap.min.js'); ?>"></script> -->
 <script src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets/js/select2.full.min.js'); ?>"></script>
 <script>
   $(function () {
     $('#tabel').DataTable()
-    $('.select2').select2()
   })
 
   // Show the failed modal

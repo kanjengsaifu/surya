@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/css/AdminLTE.min.css');?>">
   <!-- AdminLTE Skins. Choose a skin from the css/skins folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url('assets/css/dataTables.bootstrap.min.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/select2.min.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/css/skins/skin-blue.min.css');?>">
 
@@ -106,9 +107,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url('assets/img/profile.png');?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
+          Selamat datang,
           <p><?php echo $this->session->userdata('username'); ?></p>
         </div>
       </div>

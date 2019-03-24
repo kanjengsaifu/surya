@@ -8,16 +8,13 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3>Laporan</h3>
-              <?php echo form_open('penjualan/laporanHarian'); ?>
-                <input type="date" name="tanggal" id="tanggal">
-                <button class="btn btn-primary" type="submit">Cetak Laporan Harian</button>
-              <?php echo form_close(); ?>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box-header">
               <a class="btn btn-primary" href="<?php echo base_url('penjualan/jual'); ?>">Add Sale</a>
+              <div style="float: right;">
+                <?php echo form_open('penjualan/laporanHarian'); ?>
+                  <input type="date" name="tanggal" id="tanggal">
+                  <button class="btn btn-primary" type="submit">Cetak Laporan Harian</button>
+                <?php echo form_close(); ?>
+              </div>
             </div>
             <div class="box-body">
               <table class="table table-bordered table-hover" id="tabel">

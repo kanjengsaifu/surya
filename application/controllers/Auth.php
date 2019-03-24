@@ -30,8 +30,8 @@ class Auth extends CI_Controller {
         $data['pengguna'] = $this->AuthModel->login();
 
         if (!$data['pengguna']) {
-          // TODO: handle username dan atau password salah
-          die('Tidak ada di database');
+          $this->session->set_flashdata('failed', 'Akun tidak ada di database');
+          redirect('auth');
         }
 
         $userdata = array(
@@ -42,7 +42,7 @@ class Auth extends CI_Controller {
 
         $this->session->set_userdata($userdata);
         $this->session->set_flashdata('success', 'Berhasil melakukan login');
-        redirect('dashboard');
+        redirect('penjualan');
       } else {
         $data['title'] = 'Login';
         $this->load->view('Auth/login', $data);

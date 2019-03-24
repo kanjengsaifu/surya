@@ -8,22 +8,23 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <select class="form-control" name="bulan" id="bulan" onchange="changeBulan(this)" style="width: 30%;">
+              <h4>Ganti bulan</h4>
+              <select class="form-control" name="bulan" id="bulan" onchange="changeBulan(this)" style="width: 100%;">
                 <option>-- Pilih Bulan --</option>
-                <option value="januari">Januari</option>
-                <option value="februari">Februari</option>
-                <option value="maret">Maret</option>
-                <option value="april">April</option>
-                <option value="mei">Mei</option>
-                <option value="juni">Juni</option>
-                <option value="juli">Juli</option>
-                <option value="agustus">Agustus</option>
-                <option value="september">September</option>
-                <option value="oktober">Oktober</option>
-                <option value="november">November</option>
-                <option value="desember">Desember</option>
+                <option value="januari" <?php if($bulan == 'januari'){echo 'selected="selected"';} ?>>Januari</option>
+                <option value="februari" <?php if($bulan == 'februari'){echo 'selected="selected"';} ?>>Februari</option>
+                <option value="maret" <?php if($bulan == 'maret'){echo 'selected="selected"';} ?>>Maret</option>
+                <option value="april" <?php if($bulan == 'april'){echo 'selected="selected"';} ?>>April</option>
+                <option value="mei" <?php if($bulan == 'mei'){echo 'selected="selected"';} ?>>Mei</option>
+                <option value="juni" <?php if($bulan == 'juni'){echo 'selected="selected"';} ?>>Juni</option>
+                <option value="juli" <?php if($bulan == 'juli'){echo 'selected="selected"';} ?>>Juli</option>
+                <option value="agustus" <?php if($bulan == 'agustus'){echo 'selected="selected"';} ?>>Agustus</option>
+                <option value="september" <?php if($bulan == 'september'){echo 'selected="selected"';} ?>>September</option>
+                <option value="oktober" <?php if($bulan == 'oktober'){echo 'selected="selected"';} ?>>Oktober</option>
+                <option value="november" <?php if($bulan == 'november'){echo 'selected="selected"';} ?>>November</option>
+                <option value="desember" <?php if($bulan == 'desember'){echo 'selected="selected"';} ?>>Desember</option>
               </select>
-              <a class="btn btn-primary" href="#" id="pindah">Ganti</a>
+              <a class="btn btn-primary" href="#" id="pindah" style="display: none;">Ganti</a>
             </div>
           </div>
           <div class="box">
@@ -154,7 +155,7 @@
   function changeBulan(select){
     bulan = select.value
     pindah.href = base_link.concat(bulan)
-    // console.log(base_link.concat(bulan))
+    pindah.click()
   }
   </script>
   

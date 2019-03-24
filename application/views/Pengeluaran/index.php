@@ -8,12 +8,8 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <a class="btn btn-primary" href="<?php echo base_url('pengeluaran/tambah'); ?>">Add Expense</a>
-            <?php echo form_open('pengeluaran/laporanHarian'); ?>
-              <input type="date" name="tanggal" id="tanggal">
-              <button class="btn btn-primary" type="submit">Cetak Laporan Harian</button>
-            <?php echo form_close(); ?>
-            <select class="form-control" name="bulan" id="bulan" onchange="changeBulan(this)" style="width: 30%;">
+            <h4>Unduh laporan bulanan</h4>
+            <select class="form-control" name="bulan" id="bulan" onchange="changeBulan(this)" style="width: 100%;">
               <option>-- Pilih Bulan --</option>
               <option value="januari">Januari</option>
               <option value="februari">Februari</option>
@@ -28,7 +24,19 @@
               <option value="november">November</option>
               <option value="desember">Desember</option>
             </select>
-            <a class="btn btn-primary" href="#" id="pindah">Ganti</a>
+            <br>
+            <a class="btn btn-primary" href="#" id="pindah" style="float: right;">Unduh</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-header">
+            <a class="btn btn-primary" href="<?php echo base_url('pengeluaran/tambah'); ?>">Add Expense</a>
+            <div style="float: right;">
+              <?php echo form_open('pengeluaran/laporanHarian'); ?>
+                <input type="date" name="tanggal" id="tanggal">
+                <button class="btn btn-primary" type="submit">Cetak Laporan Harian</button>
+              <?php echo form_close(); ?>
+            </div>
           </div>
           <div class="box-body">
             <table class="table table-bordered table-hover" id="tabel">
