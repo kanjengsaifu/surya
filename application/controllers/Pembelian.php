@@ -36,6 +36,10 @@ class Pembelian extends CI_Controller {
 
   public function beli()
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('pembelian');
+    }
     global $data;
     $data['title'] = 'Purchase';
     $data['active'] = 'tambahPembelian';
@@ -59,6 +63,10 @@ class Pembelian extends CI_Controller {
   // Add a new item
   public function tambah($id_invoice)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('pembelian');
+    }
     global $data;
     $data['title'] = 'Purchase';
     $data['active'] = 'tambahPembelian';
@@ -100,6 +108,10 @@ class Pembelian extends CI_Controller {
 
   public function batal($id_invoice, $id_pembelian)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('pembelian');
+    }
     $purchase = $this->PembelianModel->get($id_pembelian);
     if ($this->PembelianModel->hapus($id_pembelian)) {
       // TODO: batal harusnya ngurangin stok bukan ngurangin
@@ -111,6 +123,10 @@ class Pembelian extends CI_Controller {
   //Delete one item
   public function hapus($id_invoice)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('pembeilan');
+    }
     if ($this->InvoicePembelian->hapus($id_invoice)) {
       $this->session->set_flashdata('success', 'Berhasil menghapus catatan pembelian');
       redirect('pembelian','refresh');

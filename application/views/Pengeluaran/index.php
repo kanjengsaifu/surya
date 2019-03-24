@@ -30,7 +30,9 @@
         </div>
         <div class="box">
           <div class="box-header">
+            <?php if($this->session->userdata('status') == 0): ?>
             <a class="btn btn-primary" href="<?php echo base_url('pengeluaran/tambah'); ?>">Add Expense</a>
+            <?php endif; ?>
             <div style="float: right;">
               <?php echo form_open('pengeluaran/laporanHarian'); ?>
                 <input type="date" name="tanggal" id="tanggal">
@@ -46,7 +48,9 @@
                   <th>Jenis Pengeluaran</th>
                   <th>Nama Pengeluaran</th>
                   <th>Total Pengeluaran</th>
+                  <?php if($this->session->userdata('status') == 0): ?>
                   <th>Aksi</th>
+                  <?php endif; ?>
                 </tr>
               </thead>
               <tbody>
@@ -56,10 +60,12 @@
                   <td><?php echo $emp['jenis_pengeluaran']; ?></td>
                   <td><?php echo $emp['nama_pengeluaran']; ?></td>
                   <td><?php echo $emp['total']; ?></td>
+                  <?php if($this->session->userdata('status') == 0): ?>
                   <td>
                     <a class="text-danger" href="<?php echo base_url('pengeluaran/hapus/'.$emp['id_pengeluaran']); ?>">Delete</a>
                     <a href="<?php echo base_url('pengeluaran/ubah/'.$emp['id_pengeluaran']); ?>">Edit</a>
                   </td>
+                  <?php endif; ?>
                 </tr>
                 <?php endforeach; ?>
               </tbody>

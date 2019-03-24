@@ -80,7 +80,9 @@
           <a target="_blank" href="<?php echo base_url('penjualan/suratjalan/'.$invoice['id_invoice']); ?>" class="btn btn-default"><i class="fa fa-print"></i> Surat Jalan</a>
           <a class="btn btn-primary pull-right" href="<?php echo base_url('penjualan'); ?>">Kembali</a>
           <span class="pull-right">&nbsp;</span>
+          <?php if($this->session->userdata('status') == 0): ?>
           <a class="btn btn-danger pull-right" href="<?php echo base_url('penjualan/hapus/'.$invoice['id_invoice']); ?>">Hapus</a>
+          <?php endif; ?>
         </div>
       </div>
   </section>

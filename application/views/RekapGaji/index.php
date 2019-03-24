@@ -37,7 +37,9 @@
                   <tr>
                     <th>Nama Karyawan</th>
                     <th>Gaji Pokok</th>
+                    <?php if($this->session->userdata('status') == 0): ?>
                     <th>Aksi</th>
+                    <?php endif; ?>
                   </tr>
                 </thead>
                 <tbody>
@@ -45,6 +47,7 @@
                   <tr>
                     <td><?php echo $emp['nama_karyawan']; ?></td>
                     <td><?php echo $emp['gaji_pokok']; ?></td>
+                    <?php if($this->session->userdata('status') == 0): ?>
                     <td>
                       <a class="btn btn-primary" href="<?php echo base_url('rekapgaji/hadir/'.$emp['id_karyawan']); ?>">Hadir</a>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kasbonModalAtas<?php echo $emp['id_karyawan']; ?>">Kasbon</button>
@@ -75,6 +78,7 @@
                         </div>
                       </div>
                     </td>
+                    <?php endif; ?>
                   </tr>
                   <?php endforeach; ?>
                 </tbody>
@@ -96,7 +100,9 @@
                     <th>Nama Karyawan</th>
                     <th>Jumlah Presensi</th>
                     <th>Kasbon</th>
+                    <?php if($this->session->userdata('status') == 0): ?>
                     <th>Aksi</th>
+                    <?php endif; ?>
                   </tr>
                 </thead>
                 <tbody>
@@ -105,6 +111,7 @@
                     <td><?php echo $emp['nama_karyawan']; ?></td>
                     <td><?php echo $emp['presensi']; ?></td>
                     <td><?php echo $emp['kasbon']; ?></td>
+                    <?php if($this->session->userdata('status') == 0): ?>
                     <td>
                       <a class="btn btn-primary"  href="<?php echo base_url('rekapgaji/hadir/'.$emp['id_karyawan']); ?>">Hadir</a>
                       <a class="btn btn-warning"  href="<?php echo base_url('rekapgaji/ubah/'.$emp['id_rekap']); ?>">Ubah</a>
@@ -136,6 +143,7 @@
                         </div>
                       </div>
                     </td>
+                    <?php endif; ?>
                   </tr>
                   <?php endforeach; ?>
                 </tbody>

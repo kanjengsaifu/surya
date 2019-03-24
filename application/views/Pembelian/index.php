@@ -8,7 +8,9 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
+              <?php if($this->session->userdata('status') == 0): ?>
               <a class="btn btn-primary" href="<?php echo base_url('pembelian/beli'); ?>">Add Purchase</a>
+              <?php endif; ?>
             </div>
             <div class="box-body">
               <table class="table table-bordered table-hover" id="tabel">
@@ -32,7 +34,9 @@
                     <td><?php echo $sel['tanggal']; ?></td>
                     <td>
                       <a href="<?php echo base_url('pembelian/detail/'.$sel['id_invoice']); ?>">Detail</a><br>
+                      <?php if($this->session->userdata('status') == 0): ?>
                       <a class="text-danger" href="<?php echo base_url('pembelian/hapus/'.$sel['id_invoice']); ?>">Hapus</a>
+                      <?php endif; ?>
                     </td>
                   </tr>
                   <?php endforeach; ?>

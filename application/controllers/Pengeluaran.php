@@ -30,6 +30,10 @@ class Pengeluaran extends CI_Controller {
   // Add a new item
   public function tambah()
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('pengeluaran');
+    }
     global $data;
     $data['active'] = 'tambahPengeluaran';
     $data['title'] = 'Add Expense';
@@ -56,6 +60,10 @@ class Pengeluaran extends CI_Controller {
   //Delete one item
   public function hapus($id)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('pengeluaran');
+    }
     if ($this->PengeluaranModel->hapus($id)) {
       $this->session->set_flashdata('success', 'Berhasil menghapus data pengeluaran');
       redirect('pengeluaran','refresh');
@@ -68,6 +76,10 @@ class Pengeluaran extends CI_Controller {
   //Update one item
   public function ubah($id)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('pengeluaran');
+    }
     global $data;
     $data['active'] = 'daftarPengeluaran';
     $data['title'] = 'Change Expense';

@@ -36,6 +36,10 @@ class Penjualan extends CI_Controller {
 
   public function jual()
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('penjualan');
+    }
     global $data;
     $data['title'] = 'Sale';
     $data['active'] = 'tambahPenjualan';
@@ -60,6 +64,10 @@ class Penjualan extends CI_Controller {
   // Add a new item
   public function tambah($id_invoice)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('penjualan');
+    }
     global $data;
     $data['title'] = 'Sale';
     $data['id_invoice'] = $id_invoice;
@@ -104,6 +112,10 @@ class Penjualan extends CI_Controller {
 
   public function batal($id_invoice, $id_penjualan)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('penjualan');
+    }
     $sale = $this->PenjualanModel->get($id_penjualan);
     if ($this->PenjualanModel->hapus($id_penjualan)) {
       $this->BarangModel->batal($sale['id_barang'], $sale['jumlah']);
@@ -114,6 +126,10 @@ class Penjualan extends CI_Controller {
   //Delete one item
   public function hapus($id_invoice)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('penjualan');
+    }
     if ($this->InvoiceModel->hapus($id_invoice)) {
       $this->session->set_flashdata('success', 'Berhasil menghapus invoice');
       redirect('penjualan','refresh');

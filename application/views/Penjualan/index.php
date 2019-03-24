@@ -8,7 +8,9 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
+              <?php if($this->session->userdata('status') == 0): ?>
               <a class="btn btn-primary" href="<?php echo base_url('penjualan/jual'); ?>">Add Sale</a>
+              <?php endif; ?>
               <div style="float: right;">
                 <?php echo form_open('penjualan/laporanHarian'); ?>
                   <input type="date" name="tanggal" id="tanggal">
@@ -37,8 +39,10 @@
                     <td><?php echo $sel['nama_customer']; ?></td>
                     <td><?php echo $sel['tanggal']; ?></td>
                     <td>
-                      <a href="<?php echo base_url('penjualan/detail/'.$sel['id_invoice']); ?>">Detail</a><br>
+                      <?php if($this->session->userdata('status') == 0): ?>
                       <a class="text-danger" href="<?php echo base_url('penjualan/hapus/'.$sel['id_invoice']); ?>">Hapus</a>
+                      <?php endif; ?>
+                      <a href="<?php echo base_url('penjualan/detail/'.$sel['id_invoice']); ?>">Detail</a><br>
                     </td>
                   </tr>
                   <?php endforeach; ?>

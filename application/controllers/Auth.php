@@ -12,6 +12,7 @@ class Auth extends CI_Controller {
         global $data;
         $data['notif'] = $this->NotifikasiModel->get();
         $data['unread'] = $this->NotifikasiModel->unread();
+        $data['active'] = 'none';
         //Load Dependencies
 
     }
@@ -68,7 +69,7 @@ class Auth extends CI_Controller {
       if ($this->form_validation->run() == TRUE) {
         if ($this->AuthModel->changepwd($this->session->userdata('username'))) {
           $this->session->set_flashdata('success', 'Berhasil mengubah kata sandi');
-          redirect('dashboard','refresh');
+          redirect('auth/changepwd','refresh');
         } else {
           $this->session->set_flashdata('failed', 'Gagal mengubah kata sandi');
         }

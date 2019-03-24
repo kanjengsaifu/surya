@@ -9,6 +9,10 @@ class Pelanggan extends CI_Controller {
   public function __construct()
   {
     parent::__construct();
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('penjualan');
+    }
     $this->load->model('PelangganModel');
     $this->load->model('NotifikasiModel');
     global $data;

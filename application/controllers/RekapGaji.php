@@ -40,6 +40,10 @@ class RekapGaji extends CI_Controller {
 
   public function hadir($id_karyawan)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('rekapgaji');
+    }
     if ($this->RekapGajiModel->hadir($id_karyawan)) {
       $this->session->set_flashdata('success', 'Berhasil menambah kehadiran karyawan');
       redirect('rekapgaji','refresh');
@@ -50,6 +54,10 @@ class RekapGaji extends CI_Controller {
 
   public function kasbon($id_karyawan)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('rekapgaji');
+    }
     if ($this->RekapGajiModel->kasbon($id_karyawan)) {
       $this->session->set_flashdata('success', 'Berhasil menambah data kasbon karyawan');
       redirect('rekapgaji','refresh');
@@ -60,6 +68,10 @@ class RekapGaji extends CI_Controller {
 
   public function ubah($id_rekap)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('rekapgaji');
+    }
     global $data;
     $data['title'] = 'Edit Salary';
     $data['active'] = 'daftarGaji';

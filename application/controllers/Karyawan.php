@@ -33,6 +33,10 @@ class Karyawan extends CI_Controller {
   // Add a new item
   public function tambah()
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('karyawan');
+    }
     global $data;
     $data['title'] = 'Add Employee';
     $data['active'] = 'tambahKaryawan';
@@ -61,6 +65,10 @@ class Karyawan extends CI_Controller {
   //Delete one item
   public function hapus($id)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('karyawan');
+    }
     if ($this->KaryawanModel->hapus($id)) {
       $this->session->set_flashdata('success', 'Berhasil menghapus karyawan');
       redirect('karyawan','refresh');
@@ -73,6 +81,10 @@ class Karyawan extends CI_Controller {
   //Update one item
   public function ubah($id)
   {
+    if ($this->session->userdata('status') == 1) {
+      $this->session->set_flashdata('failed', 'Anda tidak memiliki akses ke halaman tersebut');
+      redirect('karyawan');
+    }
     global $data;
     $data['title'] = 'Edit Employee';
     $data['active'] = 'daftarKaryawan';

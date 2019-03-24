@@ -81,7 +81,7 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs"><?php echo $this->session->userdata('username'); ?></span>
+              <span class="hidden-xs"><i class="fas fa-cogs"></i></span>
             </a>
             <ul class="dropdown-menu">
               <!-- Menu Footer-->
@@ -128,7 +128,9 @@
           </a>
           <ul class="treeview-menu">
             <li class="<?php if($active == 'daftarPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar</a></li>
+            <?php if($this->session->userdata('status') == 0): ?>
             <li class="<?php if($active == 'tambahPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan/jual'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah</a></li>
+            <?php endif; ?>
           </ul>
         </li>
         <li class="treeview <?php if($active == 'daftarPembelian' || $active == 'tambahPembelian'){echo 'active';} ?>">
@@ -141,9 +143,12 @@
           </a>
           <ul class="treeview-menu">
             <li class="<?php if($active == 'daftarPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar</a></li>
+            <?php if($this->session->userdata('status') == 0): ?>
             <li class="<?php if($active == 'tambahPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian/beli'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah</a></li>
+            <?php endif; ?>
           </ul>
         </li>
+        <?php if($this->session->userdata('status') == 0): ?>
         <li class="treeview <?php if($active == 'daftarBarang' || $active == 'tambahBarang' || $active == 'daftarKategori' || $active == 'tambahKategori' || $active == 'daftarMerek' || $active == 'tambahMerek' || $active == 'daftarSatuan' || $active == 'tambahSatuan' ){echo 'active';} ?>">
           <a href="#">
             <i class="fa fa-box-open"></i>
@@ -203,6 +208,7 @@
             <li class="<?php if($active == 'tambahPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Pelanggan</a></li>
           </ul>
         </li>
+        <?php endif; ?>
         <li class="treeview <?php if($active == 'daftarKaryawan' || $active == 'tambahKaryawan' || $active == 'daftarGaji'){echo 'active';} ?>">
           <a href="#">
             <i class="fa fa-user-friends"></i>
@@ -213,10 +219,13 @@
           </a>
           <ul class="treeview-menu">
             <li class="<?php if($active == 'daftarKaryawan'){echo 'active';} ?>"><a href="<?php echo base_url('karyawan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Karyawan</a></li>
+            <?php if($this->session->userdata('status') == 0): ?>
             <li class="<?php if($active == 'tambahKaryawan'){echo 'active';} ?>"><a href="<?php echo base_url('karyawan/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Karyawan</a></li>
+            <?php endif; ?>
             <li class="<?php if($active == 'daftarGaji'){echo 'active';} ?>"><a href="<?php echo base_url('rekapgaji'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Gaji Karyawan</a></li>
           </ul>
         </li>
+        <?php if($this->session->userdata('status') == 0): ?>
         <li class="treeview <?php if($active == 'daftarSupplier' || $active == 'tambahSupplier'){echo 'active';} ?>">
           <a href="#">
             <i class="fa fa-dolly-flatbed"></i>
@@ -230,6 +239,7 @@
             <li class="<?php if($active == 'tambahSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Supplier</a></li>
           </ul>
         </li>
+        <?php endif; ?>
         <li class="treeview <?php if($active == 'daftarPengeluaran' || $active == 'tambahPengeluaran'){echo 'active';} ?>">
           <a href="#">
             <i class="fa fa-search-dollar"></i>
@@ -240,7 +250,9 @@
           </a>
           <ul class="treeview-menu">
             <li class="<?php if($active == 'daftarPengeluaran'){echo 'active';} ?>"><a href="<?php echo base_url('pengeluaran'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Pengeluaran</a></li>
+            <?php if($this->session->userdata('status') == 0): ?>
             <li class="<?php if($active == 'tambahPengeluaran'){echo 'active';} ?>"><a href="<?php echo base_url('pengeluaran/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Pengeluaran</a></li>
+            <?php endif; ?>
           </ul>
         </li>
       </ul>

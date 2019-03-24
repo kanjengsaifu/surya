@@ -15,13 +15,13 @@
     </div>
 
     <div class="row invoice-info">
-      <div class="col-sm-12 invoice-col">
-        Supplier:<strong class="pull-right">Invoice #<?php echo $invoice['id_invoice']; ?></strong>
+      <div class="col-sm-12">
+        Supplier<strong class="pull-right">Invoice #<?php echo $invoice['id_invoice']; ?></strong>
         <address>
-          <strong><?php echo $invoice['nama_supplier']; ?></strong><br>
-          <?php echo $invoice['alamat_supplier']; ?><br>
-          <?php echo $invoice['telp_supplier']; ?><br>
-          <?php echo $invoice['nama_bank']; ?><br>
+          Nama&emsp;&emsp;&emsp;&nbsp;&nbsp;: <strong><?php echo $invoice['nama_supplier']; ?></strong><br>
+          Alamat&emsp;&emsp;&emsp;: <?php echo $invoice['alamat_supplier']; ?><br>
+          No Telepon &emsp;: <?php echo $invoice['telp_supplier']; ?><br>
+          Bank&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?php echo $invoice['nama_bank']; ?><br>
         </address>
       </div>
       <div class="col-xs-3 invoice-col"></div>
@@ -81,7 +81,9 @@
           <button onClick="window.print();" class="btn btn-default"><i class="fa fa-print"></i> Print</button>
           <a class="btn btn-primary pull-right" href="<?php echo base_url('pembelian'); ?>">Kembali</a>
           <span class="pull-right">&nbsp;</span>
+          <?php if($this->session->userdata('status') == 0): ?>
           <a class="btn btn-danger pull-right" href="<?php echo base_url('pembelian/hapus/'.$invoice['id_invoice']); ?>">Hapus</a>
+          <?php endif; ?>
         </div>
       </div>
   </section>
