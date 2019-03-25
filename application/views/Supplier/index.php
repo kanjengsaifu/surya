@@ -19,7 +19,6 @@
                     <th>Telp Supplier</th>
                     <th>No Rekening Supplier</th>
                     <th>Nama Bank</th>
-                    <th>Fax Supplier</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
                   </tr>
@@ -32,7 +31,6 @@
                     <td><?php echo $sup['telp_supplier']; ?></td>
                     <td><?php echo $sup['no_rekening_supplier']; ?></td>
                     <td><?php echo $sup['nama_bank']; ?></td>
-                    <td><?php echo $sup['fax_supplier']; ?></td>
                     <td><?php echo $sup['keterangan']; ?></td>
                     <td>
                       <a class="text-danger" href="<?php echo base_url('supplier/hapus/'.$sup['id_supplier']); ?>">Delete</a>

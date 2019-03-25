@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group <?php if (form_error('telp_supplier')){ echo 'has-error'; } ?>">
                   <label>Telp Supplier</label>
-                  <input class="form-control" type="number" name="telp_supplier" id="telp_supplier"
+                  <input class="form-control" type="number" id="telp" name="telp_supplier" id="telp_supplier" max="30"
                     value="<?php
                       if (isset($_POST['telp_supplier']))
                       {
@@ -74,19 +74,6 @@
                     ?>">
                   <?php echo form_error('nama_bank');?>
                 </div>
-                <div class="form-group <?php if (form_error('fax_supplier')){ echo 'has-error'; } ?>">
-                  <label>Fax Supplier</label>
-                  <input class="form-control" type="text" name="fax_supplier" id="fax_supplier"
-                    value="<?php
-                      if (isset($_POST['fax_supplier']))
-                      {
-                        echo $_POST['fax_supplier'];
-                      } else {
-                        echo $supplier['fax_supplier'];
-                      }
-                    ?>">
-                  <?php echo form_error('fax_supplier');?>
-                </div>
                 <div class="form-group <?php if (form_error('keterangan')){ echo 'has-error'; } ?>">
                   <label>Keterangan</label>
                   <input class="form-control" type="text" name="keterangan" id="keterangan"
@@ -110,3 +97,12 @@
       </div>
     </section>
   </div>
+
+  <script>
+    var myInput = document.getElementById('telp')
+    myInput.oninput = function () {
+    if (this.value.length > 13) {
+        this.value = this.value.slice(0,13); 
+      }
+    }
+  </script>

@@ -24,7 +24,6 @@ class SupplierModel extends CI_Model {
       'telp_supplier' => $this->input->post('telp_supplier'),
       'no_rekening_supplier' => $this->input->post('no_rekening_supplier'),
       'nama_bank' => $this->input->post('nama_bank'),
-      'fax_supplier' => $this->input->post('fax_supplier'),
       'keterangan' => $this->input->post('keterangan')
     );
 
@@ -54,7 +53,6 @@ class SupplierModel extends CI_Model {
       'telp_supplier' => $this->input->post('telp_supplier'),
       'no_rekening_supplier' => $this->input->post('no_rekening_supplier'),
       'nama_bank' => $this->input->post('nama_bank'),
-      'fax_supplier' => $this->input->post('fax_supplier'),
       'keterangan' => $this->input->post('keterangan')
     );
 

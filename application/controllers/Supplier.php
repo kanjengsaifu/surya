@@ -45,7 +45,6 @@ class Supplier extends CI_Controller {
     $this->form_validation->set_rules('telp_supplier', 'Telp Supplier', 'required');
     $this->form_validation->set_rules('no_rekening_supplier', 'No Rekening Supplier', 'required');
     $this->form_validation->set_rules('nama_bank', 'Nama bank', 'required');
-    $this->form_validation->set_rules('fax_supplier', 'Fax Supplier', 'required');
     $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
     $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
     
@@ -87,7 +86,6 @@ class Supplier extends CI_Controller {
     $this->form_validation->set_rules('telp_supplier', 'Telp Supplier', 'required');
     $this->form_validation->set_rules('no_rekening_supplier', 'No Rekening Supplier', 'required');
     $this->form_validation->set_rules('nama_bank', 'Nama bank', 'required');
-    $this->form_validation->set_rules('fax_supplier', 'Fax Supplier', 'required');
     $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
     $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
 

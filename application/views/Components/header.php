@@ -118,36 +118,36 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVIGATION</li>
-        <li class="treeview <?php if($active == 'daftarPenjualan' || $active == 'tambahPenjualan'){echo 'active';} ?>">
+        <?php if($this->session->userdata('status') == 0): ?>
+        <li class="treeview <?php if($active == 'daftarSupplier' || $active == 'tambahSupplier'){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-chart-line"></i>
-            <span>Penjualan</span>
+            <i class="fa fa-dolly-flatbed"></i>
+            <span>Supplier</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar</a></li>
-            <?php if($this->session->userdata('status') == 0): ?>
-            <li class="<?php if($active == 'tambahPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan/jual'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah</a></li>
-            <?php endif; ?>
+            <li class="<?php if($active == 'daftarSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Supplier</a></li>
+            <li class="<?php if($active == 'tambahSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Supplier</a></li>
           </ul>
         </li>
-        <li class="treeview <?php if($active == 'daftarPembelian' || $active == 'tambahPembelian'){echo 'active';} ?>">
+        <?php endif; ?>
+        <?php if($this->session->userdata('status') == 0): ?>
+        <li class="treeview <?php if($active == 'daftarPelanggan' || $active == 'tambahPelanggan'){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-shopping-cart"></i>
-            <span>Pembelian</span>
+            <i class="fa fa-address-book"></i>
+            <span>Pelanggan</span>
             <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar</a></li>
-            <?php if($this->session->userdata('status') == 0): ?>
-            <li class="<?php if($active == 'tambahPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian/beli'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah</a></li>
-            <?php endif; ?>
+            <li class="<?php if($active == 'daftarPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Pelanggan</a></li>
+            <li class="<?php if($active == 'tambahPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Pelanggan</a></li>
           </ul>
         </li>
+        <?php endif; ?>
         <?php if($this->session->userdata('status') == 0): ?>
         <li class="treeview <?php if($active == 'daftarBarang' || $active == 'tambahBarang' || $active == 'daftarKategori' || $active == 'tambahKategori' || $active == 'daftarMerek' || $active == 'tambahMerek' || $active == 'daftarSatuan' || $active == 'tambahSatuan' ){echo 'active';} ?>">
           <a href="#">
@@ -195,19 +195,6 @@
             </li>
           </ul>
         </li>
-        <li class="treeview <?php if($active == 'daftarPelanggan' || $active == 'tambahPelanggan'){echo 'active';} ?>">
-          <a href="#">
-            <i class="fa fa-address-book"></i>
-            <span>Pelanggan</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Pelanggan</a></li>
-            <li class="<?php if($active == 'tambahPelanggan'){echo 'active';} ?>"><a href="<?php echo base_url('pelanggan/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Pelanggan</a></li>
-          </ul>
-        </li>
         <?php endif; ?>
         <li class="treeview <?php if($active == 'daftarKaryawan' || $active == 'tambahKaryawan' || $active == 'daftarGaji'){echo 'active';} ?>">
           <a href="#">
@@ -225,21 +212,36 @@
             <li class="<?php if($active == 'daftarGaji'){echo 'active';} ?>"><a href="<?php echo base_url('rekapgaji'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Gaji Karyawan</a></li>
           </ul>
         </li>
-        <?php if($this->session->userdata('status') == 0): ?>
-        <li class="treeview <?php if($active == 'daftarSupplier' || $active == 'tambahSupplier'){echo 'active';} ?>">
+        <li class="treeview <?php if($active == 'daftarPembelian' || $active == 'tambahPembelian'){echo 'active';} ?>">
           <a href="#">
-            <i class="fa fa-dolly-flatbed"></i>
-            <span>Supplier</span>
+            <i class="fa fa-shopping-cart"></i>
+            <span>Pembelian</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="<?php if($active == 'daftarPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar</a></li>
+            <?php if($this->session->userdata('status') == 0): ?>
+            <li class="<?php if($active == 'tambahPembelian'){echo 'active';} ?>"><a href="<?php echo base_url('pembelian/beli'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah</a></li>
+            <?php endif; ?>
+          </ul>
+        </li>
+        <li class="treeview <?php if($active == 'daftarPenjualan' || $active == 'tambahPenjualan'){echo 'active';} ?>">
+          <a href="#">
+            <i class="fa fa-chart-line"></i>
+            <span>Penjualan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?php if($active == 'daftarSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar Supplier</a></li>
-            <li class="<?php if($active == 'tambahSupplier'){echo 'active';} ?>"><a href="<?php echo base_url('supplier/tambah'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah Supplier</a></li>
+            <li class="<?php if($active == 'daftarPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Daftar</a></li>
+            <?php if($this->session->userdata('status') == 0): ?>
+            <li class="<?php if($active == 'tambahPenjualan'){echo 'active';} ?>"><a href="<?php echo base_url('penjualan/jual'); ?>"><i class="far fa-circle"></i>&nbsp;&nbsp;Tambah</a></li>
+            <?php endif; ?>
           </ul>
         </li>
-        <?php endif; ?>
         <li class="treeview <?php if($active == 'daftarPengeluaran' || $active == 'tambahPengeluaran'){echo 'active';} ?>">
           <a href="#">
             <i class="fa fa-search-dollar"></i>
