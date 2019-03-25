@@ -93,7 +93,7 @@
                 <div class="form-group <?php if (form_error('jumlah')){ echo 'has-error'; } ?>">
                   <label>Jumlah Dibeli</label><br>
                   <small>Jumlah stok barang: <strong id="tulisanStok"></strong></small>
-                  <input type="number" name="jumlah" id="jumlah" min="0" onkeyup="jumlahUbah();" onchange="jumlahUbah();" max="0" class="form-control"
+                  <input type="number" name="jumlah" id="jumlah" min="0" onkeyup="jumlahUbah();" onchange="jumlahUbah();" oninput="validity.valid||(value='');" max="0" class="form-control"
                     value="<?php
                     if (isset($_POST['jumlah']))
                     {

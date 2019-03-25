@@ -79,7 +79,7 @@
                 </div>
                 <div class="form-group <?php if (form_error('jumlah')){ echo 'has-error'; } ?>">
                   <label>Jumlah Dibeli</label>
-                  <input type="number" name="jumlah" id="jumlah" min="0" onkeyup="jumlahUbah();" onchange="jumlahUbah();" class="form-control"
+                  <input type="number" name="jumlah" id="jumlah" min="0" onkeyup="jumlahUbah();" onchange="jumlahUbah();" oninput="validity.valid||(value='');" class="form-control"
                     value="<?php
                     if (isset($_POST['jumlah']))
                     {
