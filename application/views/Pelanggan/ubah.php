@@ -71,3 +71,12 @@
       </div>
     </section>
   </div>
+
+  <script>
+    var myInput = document.getElementById('telp_customer')
+    myInput.oninput = function () {
+    if (this.value.length > 13) {
+        this.value = this.value.slice(0,13); 
+      }
+    }
+  </script>

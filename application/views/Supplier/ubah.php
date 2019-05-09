@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group <?php if (form_error('telp_supplier')){ echo 'has-error'; } ?>">
                   <label>Telp Supplier</label>
-                  <input class="form-control" type="number" id="telp" name="telp_supplier" id="telp_supplier" max="30"
+                  <input class="form-control" type="number" id="telp" name="telp_supplier" id="telp_supplier"
                     value="<?php
                       if (isset($_POST['telp_supplier']))
                       {
