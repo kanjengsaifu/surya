@@ -257,6 +257,11 @@
             <?php endif; ?>
           </ul>
         </li>
+        <li class="<?php if($active == 'daftarPemasukan'){echo 'active';} ?>">
+          <a href="<?php echo base_url('pemasukan'); ?>">
+            <i class="fa fa-th"></i> <span>Pemasukan</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
