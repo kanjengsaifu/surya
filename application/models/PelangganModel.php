@@ -20,9 +20,14 @@ class PelangganModel extends CI_Model {
     $data = array(
       'id_customer' => NULL,
       'nama_customer' => $this->input->post('nama_customer'),
-      'alamat_customer' => $this->input->post('alamat_customer'),
+      'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+      'tanggal_lahir' => $this->input->post('tanggal_lahir'),
       'telp_customer' => $this->input->post('telp_customer'),
-      'keterangan' => $this->input->post('keterangan')
+      'email' => $this->input->post('email'),
+      'alamat_customer' => $this->input->post('alamat_customer'),
+      'kota' => $this->input->post('kota'),
+      'kode_pos' => $this->input->post('kode_pos'),
+      'catatan' => $this->input->post('catatan')
     );
     
     if ($this->db->insert('customer', $data)) {
@@ -47,9 +52,14 @@ class PelangganModel extends CI_Model {
     $data = array(
       'id_customer' => $id,
       'nama_customer' => $this->input->post('nama_customer'),
-      'alamat_customer' => $this->input->post('alamat_customer'),
+      'jenis_kelamin' => $this->input->post('jenis_kelamin'),
+      'tanggal_lahir' => $this->input->post('tanggal_lahir'),
       'telp_customer' => $this->input->post('telp_customer'),
-      'keterangan' => $this->input->post('keterangan')
+      'email' => $this->input->post('email'),
+      'alamat_customer' => $this->input->post('alamat_customer'),
+      'kota' => $this->input->post('kota'),
+      'kode_pos' => $this->input->post('kode_pos'),
+      'catatan' => $this->input->post('catatan')
     );
     
     $this->db->where('id_customer', $id);

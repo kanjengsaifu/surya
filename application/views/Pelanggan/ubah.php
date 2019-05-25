@@ -22,21 +22,50 @@
                     ?>">
                   <?php echo form_error('nama_customer');?>
                 </div>
-                <div class="form-group <?php if (form_error('alamat_customer')){ echo 'has-error'; } ?>">
-                  <label>Alamat Customer</label>
-                  <input class="form-control" type="text" name="alamat_customer" id="alamat_customer"
-                    value="<?php
-                      if (isset($_POST['alamat_customer']))
+                <div class="form-group <?php if (form_error('jenis_kelamin')){ echo 'has-error'; } ?>">
+                <label>Jenis Kelamin</label>
+                  <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
+                    <option></option>
+                    <option value="Laki-laki"
+                      <?php
+                      if (isset($_POST['jenis_kelamin']))
                       {
-                        echo $_POST['alamat_customer'];
-                      } else {
-                        echo $customer['alamat_customer'];
+                        if ($_POST['jenis_kelamin'] == 'Laki-laki') {
+                          echo 'selected="selected"';
+                        }
+                      } else if ($customer['jenis_kelamin'] == 'Laki-laki') {
+                        echo 'selected="selected"';
                       }
-                    ?>">
-                  <?php echo form_error('alamat_customer');?>
+                    ?>>Laki-laki</option>
+                    <option value="Perempuan"
+                      <?php
+                      if (isset($_POST['jenis_kelamin']))
+                      {
+                        if ($_POST['jenis_kelamin'] == 'Perempuan') {
+                          echo 'selected="selected"';
+                        }
+                      } else if ($customer['jenis_kelamin'] == 'Perempuan') {
+                        echo 'selected="selected"';
+                      }
+                    ?>>Perempuan</option>
+                  </select>
+                  <?php echo form_error('jenis_kelamin'); ?>
+                </div>
+                <div class="form-group <?php if (form_error('tanggal_lahir')){ echo 'has-error'; } ?>">
+                  <label>Tanggal Lahir</label>
+                  <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control"
+                    value="<?php
+                    if (isset($_POST['tanggal_lahir']))
+                    {
+                      echo $_POST['tanggal_lahir'];
+                    } else {
+                      echo $customer['tanggal_lahir'];
+                    }
+                  ?>">
+                  <?php echo form_error('tanggal_lahir');?>
                 </div>
                 <div class="form-group <?php if (form_error('telp_customer')){ echo 'has-error'; } ?>">
-                  <label>Telp Customer</label>
+                  <label>No Telepon</label>
                   <input class="form-control" type="number" name="telp_customer" id="telp_customer"
                     value="<?php
                       if (isset($_POST['telp_customer']))
@@ -48,18 +77,70 @@
                     ?>">
                   <?php echo form_error('telp_customer');?>
                 </div>
-                <div class="form-group <?php if (form_error('keterangan')){ echo 'has-error'; } ?>">
-                  <label>Keterangan</label>
-                  <input class="form-control" type="text" name="keterangan" id="keterangan"
+                <div class="form-group <?php if (form_error('email')){ echo 'has-error'; } ?>">
+                  <label>Email</label>
+                  <input class="form-control" type="email" name="email" id="email"
                     value="<?php
-                      if (isset($_POST['keterangan']))
+                    if (isset($_POST['email']))
+                    {
+                      echo $_POST['email'];
+                    } else {
+                      echo $customer['email'];
+                    }
+                  ?>">
+                  <?php echo form_error('email');?>
+                </div>
+                <div class="form-group <?php if (form_error('alamat_customer')){ echo 'has-error'; } ?>">
+                  <label>Alamat</label>
+                  <input class="form-control" type="text" name="alamat_customer" id="alamat_customer"
+                    value="<?php
+                      if (isset($_POST['alamat_customer']))
                       {
-                        echo $_POST['keterangan'];
+                        echo $_POST['alamat_customer'];
                       } else {
-                        echo $customer['keterangan'];
+                        echo $customer['alamat_customer'];
                       }
                     ?>">
-                  <?php echo form_error('keterangan');?>
+                  <?php echo form_error('alamat_customer');?>
+                </div>
+                <div class="form-group <?php if (form_error('kota')){ echo 'has-error'; } ?>">
+                  <label>Kota</label>
+                  <input class="form-control" type="text" name="kota" id="kota"
+                    value="<?php
+                    if (isset($_POST['kota']))
+                    {
+                      echo $_POST['kota'];
+                    } else {
+                      echo $customer['kota'];
+                    }
+                  ?>">
+                  <?php echo form_error('kota');?>
+                </div>
+                <div class="form-group <?php if (form_error('kode_pos')){ echo 'has-error'; } ?>">
+                  <label>Kode Pos</label>
+                  <input class="form-control" type="number" name="kode_pos" id="kode_pos"
+                    value="<?php
+                    if (isset($_POST['kode_pos']))
+                    {
+                      echo $_POST['kode_pos'];
+                    } else {
+                      echo $customer['kode_pos'];
+                    }
+                  ?>">
+                  <?php echo form_error('kode_pos');?>
+                </div>
+                <div class="form-group <?php if (form_error('catatan')){ echo 'has-error'; } ?>">
+                  <label>Catatan</label>
+                  <input class="form-control" type="text" name="catatan" id="catatan"
+                    value="<?php
+                      if (isset($_POST['catatan']))
+                      {
+                        echo $_POST['catatan'];
+                      } else {
+                        echo $customer['catatan'];
+                      }
+                    ?>">
+                  <?php echo form_error('catatan');?>
                 </div>
               </div>
               <div class="box-footer">

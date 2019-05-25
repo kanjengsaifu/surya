@@ -215,7 +215,7 @@
         <li class="treeview <?php if($active == 'daftarPembelian' || $active == 'tambahPembelian'){echo 'active';} ?>">
           <a href="#">
             <i class="fa fa-shopping-cart"></i>
-            <span>Pembelian</span>
+            <span>Pembelian Raw Material</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>

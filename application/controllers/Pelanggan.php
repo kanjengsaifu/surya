@@ -41,9 +41,14 @@ class Pelanggan extends CI_Controller {
     $data['title'] = 'Add Customer';
     $data['active'] = 'tambahPelanggan';
     $this->form_validation->set_rules('nama_customer', 'Nama Customer', 'required');
-    $this->form_validation->set_rules('alamat_customer', 'Alamat Customer', 'required');
-    $this->form_validation->set_rules('telp_customer', 'Telepon Customer', 'required');
-    $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
+    $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required');
+    $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
+    $this->form_validation->set_rules('telp_customer', 'No Telepon', 'required');
+    $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_rules('alamat_customer', 'Alamat', 'required');
+    $this->form_validation->set_rules('kota', 'Kota', 'required');
+    $this->form_validation->set_rules('kode_pos', 'Kode Pos', 'required');
+    $this->form_validation->set_rules('catatan', 'Catatan', 'required');
     $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
     
     
@@ -82,9 +87,14 @@ class Pelanggan extends CI_Controller {
     $data['active'] = 'daftarPelanggan';
     $data['customer'] = $this->PelangganModel->get($id);
     $this->form_validation->set_rules('nama_customer', 'Nama Customer', 'required');
-    $this->form_validation->set_rules('alamat_customer', 'Alamat Customer', 'required');
-    $this->form_validation->set_rules('telp_customer', 'Telepon Customer', 'required');
-    $this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
+    $this->form_validation->set_rules('jenis_kelamin', 'Jenis Kelamin', 'required');
+    $this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'required');
+    $this->form_validation->set_rules('telp_customer', 'No Telepon', 'required');
+    $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_rules('alamat_customer', 'Alamat', 'required');
+    $this->form_validation->set_rules('kota', 'Kota', 'required');
+    $this->form_validation->set_rules('kode_pos', 'Kode Pos', 'required');
+    $this->form_validation->set_rules('catatan', 'Catatan', 'required');
     $this->form_validation->set_error_delimiters('<span class="help-block">', '</span>');
     
     

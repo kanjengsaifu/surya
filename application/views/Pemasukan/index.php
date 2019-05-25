@@ -23,6 +23,8 @@
                     <th>Invoice</th>
                     <th>Pelanggan</th>
                     <th>Tanggal</th>
+                    <th>Jumlah dalam KG</th>
+                    <th>Jumlah dalam Rp</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -34,6 +36,18 @@
                     <td><strong>#<?php echo $sel['id_invoice']; ?></strong></td>
                     <td><?php echo $sel['nama_customer']; ?></td>
                     <td><?php echo $sel['tanggal']; ?></td>
+                    <?php $kg = 0; ?>
+                    <?php $rp = 0; ?>
+                    <?php foreach($sales as $sl): ?>
+                    <?php
+                      if ($sl['id_invoice'] == $sel['id_invoice']) {
+                        $kg += $sl['jumlah'];
+                        $rp += $sl['jumlah'] * $sl['harga_beli'];
+                      }
+                    ?>
+                    <?php endforeach; ?>
+                    <td><?php echo $kg; ?></td>
+                    <td><?php echo $rp; ?></td>
                   </tr>
                   <?php endforeach; ?>
                 </tbody>

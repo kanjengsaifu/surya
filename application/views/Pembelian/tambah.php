@@ -15,8 +15,8 @@
                     <th>No</th>
                     <th>Nama Barang</th>
                     <th>Jumlah</th>
-                    <th>Harga Jual</th>
-                    <th>Total Harga</th>
+                    <th>Harga Beli</th>
+                    <th>Total Harga Beli</th>
                     <th>Keterangan</th>
                     <th>Aksi</th>
                   </tr>
