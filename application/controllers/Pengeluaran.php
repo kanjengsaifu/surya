@@ -20,7 +20,7 @@ class Pengeluaran extends CI_Controller {
   {
     global $data;
     $data['active'] = 'daftarPengeluaran';
-    $data['title'] = 'Expense';
+    $data['title'] = 'Kas Keluar';
     $data['expenses'] = $this->PengeluaranModel->get();
     $this->load->view('Components/header', $data);
     $this->load->view('Pengeluaran/index', $data);

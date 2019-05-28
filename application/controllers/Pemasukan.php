@@ -28,7 +28,7 @@ class Pemasukan extends CI_Controller {
     $data['sales'] = $this->PenjualanModel->pemasukan();
     // die(json_encode($data['invoices']));
     // die(json_encode($data['sales']));
-    $data['title'] = 'Inflow';
+    $data['title'] = 'Kas Masuk';
     $this->load->view('Components/header', $data);
     $this->load->view('Pemasukan/index', $data);
     $this->load->view('Components/footer');

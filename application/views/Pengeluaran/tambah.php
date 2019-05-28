@@ -26,7 +26,7 @@
                     <option></option>
                     <option value="tak_terkendali"
                       <?php
-                      if (isset($_POST['jenis+pengeluaran']))
+                      if (isset($_POST['jenis_pengeluaran']))
                       {
                         if ($_POST['jenis_pengeluaran'] == 'tak_terkendali') {
                           echo 'selected="selected"';
@@ -37,11 +37,47 @@
                       <?php
                       if (isset($_POST['jenis_pengeluaran']))
                       {
-                        if ($_POST['id_customer'] == 'overhead') {
+                        if ($_POST['jenis_pengeluaran'] == 'overhead') {
                           echo 'selected="selected"';
                         }
                       }
                     ?>>Pengeluaran Overhead</option>
+                    <option value="biaya_gaji_karyawan"
+                      <?php
+                      if (isset($_POST['jenis_pengeluaran']))
+                      {
+                        if ($_POST['jenis_pengeluaran'] == 'biaya_gaji_karyawan') {
+                          echo 'selected="selected"';
+                        }
+                      }
+                    ?>>Biaya Gaji Karyawan</option>
+                    <option value="biaya_pembelian_raw_material"
+                      <?php
+                      if (isset($_POST['jenis_pengeluaran']))
+                      {
+                        if ($_POST['jenis_pengeluaran'] == 'biaya_pembelian_raw_material') {
+                          echo 'selected="selected"';
+                        }
+                      }
+                    ?>>Biaya Pembelian Raw Material</option>
+                    <option value="biaya_pemasaran"
+                      <?php
+                      if (isset($_POST['jenis_pengeluaran']))
+                      {
+                        if ($_POST['jenis_pengeluaran'] == 'biaya_pemasaran') {
+                          echo 'selected="selected"';
+                        }
+                      }
+                    ?>>Biaya Pemasaran</option>
+                    <option value="biaya_administrasi_dan_umum"
+                      <?php
+                      if (isset($_POST['jenis_pengeluaran']))
+                      {
+                        if ($_POST['jenis_pengeluaran'] == 'biaya_administrasi_dan_umum') {
+                          echo 'selected="selected"';
+                        }
+                      }
+                    ?>>Biaya Administrasi dan Umum</option>
                   </select>
                   <?php echo form_error('jenis_pengeluaran');?>
                 </div>

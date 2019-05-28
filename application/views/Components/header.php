@@ -245,7 +245,7 @@
         <li class="treeview <?php if($active == 'daftarPengeluaran' || $active == 'tambahPengeluaran'){echo 'active';} ?>">
           <a href="#">
             <i class="fa fa-search-dollar"></i>
-            <span>Pengeluaran</span>
+            <span>Kas Keluar</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -259,7 +259,12 @@
         </li>
         <li class="<?php if($active == 'daftarPemasukan'){echo 'active';} ?>">
           <a href="<?php echo base_url('pemasukan'); ?>">
-            <i class="fa fa-th"></i> <span>Pemasukan</span>
+            <i class="fa fa-th"></i> <span>Kas Masuk</span>
+          </a>
+        </li>
+        <li class="<?php if($active == 'laporanKas'){echo 'active';} ?>">
+          <a href="<?php echo base_url('laporankas'); ?>">
+            <i class="fa fa-file-invoice-dollar"></i> <span>Laporan Kas</span>
           </a>
         </li>
       </ul>
