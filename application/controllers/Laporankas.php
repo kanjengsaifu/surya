@@ -48,7 +48,7 @@ class Laporankas extends CI_Controller {
     $data['kas_keluar'] = $kas_keluar;
 
     $this->load->view('Components/header', $data, FALSE);
-    $this->load->view('laporankas/index');
+    $this->load->view('Laporankas/index');
     $this->load->view('Components/footer', $data, FALSE);
   }
 
