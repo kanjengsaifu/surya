@@ -11,6 +11,7 @@ class Laporankas extends CI_Controller {
     parent::__construct();
     $this->load->model('PengeluaranModel');
     $this->load->model('PenjualanModel');
+    $this->load->model('PembelianModel');
     $this->load->model('NotifikasiModel');
     global $data;
     $data['notif'] = $this->NotifikasiModel->get();
@@ -22,6 +23,7 @@ class Laporankas extends CI_Controller {
     global $data;
     // $data['customers'] = $this->PelangganModel->get();
     $data['expenses'] = $this->PengeluaranModel->get();
+    $data['pembelian'] = $this->PembelianModel->pengeluaran();
     $data['sales'] = $this->PenjualanModel->pemasukan();
     $data['title'] = 'Laporan Kas';
     $data['active'] = 'laporanKas';
@@ -29,6 +31,12 @@ class Laporankas extends CI_Controller {
     $kas_keluar = 0;
     foreach($data['expenses'] as $dt) {
       $kas_keluar = $kas_keluar + (int)$dt['total'];
+    }
+
+    $lama = $kas_keluar;
+
+    foreach($data['pembelian'] as $dt) {
+      $kas_keluar = $kas_keluar + ($dt['jumlah'] * $dt['harga_jual']);
     }
 
     $kas_masuk = 0;

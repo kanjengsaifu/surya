@@ -81,6 +81,18 @@ class PembelianModel extends CI_Model {
     }
   }
 
+  public function pengeluaran()
+  {
+    $this->db->select('invoice_pembelian.*, supplier.nama_supplier, pembelian.*, barang.nama_barang, barang.harga_jual');
+    $this->db->from('invoice_pembelian');
+    $this->db->join('pembelian', 'invoice_pembelian.id_invoice = pembelian.id_invoice', 'left');
+    $this->db->join('supplier', 'invoice_pembelian.id_supplier = supplier.id_supplier', 'left');
+    $this->db->join('barang', 'pembelian.id_barang = barang.id_barang', 'left');
+    
+    $results = $this->db->get();
+    return $results->result_array();
+  }
+
 }
 
 /* End of file PembelianModel.php */
