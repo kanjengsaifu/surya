@@ -34,7 +34,7 @@ class Rekapgaji extends CI_Controller {
     }
     $data['employees'] = $this->KaryawanModel->get();
     $this->load->view('Components/header', $data);
-    $this->load->view('RekapGaji/index', $data);
+    $this->load->view('Rekapgaji/index', $data);
     $this->load->view('Components/footer');
   }
 
@@ -89,7 +89,7 @@ class Rekapgaji extends CI_Controller {
       }
     } else {
       $this->load->view('Components/header', $data);
-      $this->load->view('RekapGaji/ubah', $data);
+      $this->load->view('Rekapgaji/ubah', $data);
       $this->load->view('Components/footer');
     }     
   }
@@ -99,7 +99,7 @@ class Rekapgaji extends CI_Controller {
     $data['salaries'] = $this->RekapGajiModel->get($bulan, false);
     $data['bulan'] = ucfirst($bulan);
     // die(json_encode($data['salaries']));
-    $this->load->view('RekapGaji/laporanBulanan', $data);
+    $this->load->view('Rekapgaji/laporanBulanan', $data);
   }
 
   private function month($angka) {
